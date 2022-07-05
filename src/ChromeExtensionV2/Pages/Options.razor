@@ -1,5 +1,4 @@
 ﻿@page "/options.html"
-@inject IJSRuntime JS
 
 <PageTitle>Options</PageTitle>
 
@@ -10,17 +9,3 @@
 <div>
     <p>Choose a different background color!</p>
 </div>
-
-@code {
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (!firstRender)
-        {
-            return;
-        }
-        
-        var src = "js/options.js";
-        var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/site.js").ConfigureAwait(false);
-        await module.InvokeVoidAsync("loadJs", src).ConfigureAwait(false);
-    }
-}

@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "version": "1.0",
-  "name": "Getting Started Example",
+  "name": "Getting Started Example (Blazor WASM)",
   "description": "Build an Extension!",
 
   "permissions": [
@@ -17,7 +17,7 @@
     "128": "images/get_started128.png"
   },
 
-  "content_security_policy": "script-src 'self' 'unsafe-eval' 'wasm-eval' 'sha256-v8v3RKRPmN4odZ1CWM5gw80QKPCCWMcpNeOmimNL2AA=' 'unsafe-inline' 'sha256-DnTH4SKCYpHBGu1OxDOqoYLsvmZTiYIWJVQ1Ava7Kig=' 'sha256-b9roSuk6Pa7l0Hl/LWXGQlupw8fMc6ME2+82/N3qM0Q='; object-src 'self'",
+  "content_security_policy": "script-src 'self' 'unsafe-eval' 'wasm-unsafe-eval' 'sha256-v8v3RKRPmN4odZ1CWM5gw80QKPCCWMcpNeOmimNL2AA=' 'sha256-DnTH4SKCYpHBGu1OxDOqoYLsvmZTiYIWJVQ1Ava7Kig=' 'sha256-b9roSuk6Pa7l0Hl/LWXGQlupw8fMc6ME2+82/N3qM0Q='; object-src 'self'",
 
   "background": {
     "scripts": [
@@ -26,7 +26,7 @@
     "persistent": false
   },
 
-  "browser_action": {
+  "page_action": {
     "default_popup": "popup.html",
     "default_icon": {
       "16": "images/get_started16.png",

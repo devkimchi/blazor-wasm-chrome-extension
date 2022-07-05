@@ -1,12 +1,38 @@
-(Get-Content -Path ./published/wwwroot/_framework/blazor.webassembly.js -Raw) -replace "_framework/", "framework/" | Set-Content -Path ./published/wwwroot/_framework/blazor.webassembly.js -Force
+# Run-PostBuild.ps1
 
-(Get-Content -Path ./published/wwwroot/index.html -Raw) -replace "_framework/", "framework/" | Set-Content -Path ./published/wwwroot/index.html -Force
+function Update-FileContent {
+    param (
+        [string] $Filename,
+        [string] $Value1,
+        [string] $Value2
+    )
+
+    $content = Get-Content -Path $Filename -Raw
+    $updated = $content -replace $Value1, $Value2
+    Set-Content -Path $Filename -Value $updated -Force
+}
+
+Update-FileContent `
+    -Filename "./published/wwwroot/_framework/blazor.webassembly.js" `
+    -Value1 "_framework" `
+    -Value2 "framework"
+
+Update-FileContent `
+    -Filename "./published/wwwroot/index.html" `
+    -Value1 "_framework" `
+    -Value2 "framework"
 
 mv ./published/wwwroot/_framework ./published/wwwroot/framework
 
 cp ./published/wwwroot/index.html ./published/wwwroot/popup.html
 cp ./published/wwwroot/index.html ./published/wwwroot/options.html
 
-(Get-Content -Path ./published/wwwroot/popup.html -Raw) -replace "js/main.js", "js/popup.js" | Set-Content -Path ./published/wwwroot/popup.html -Force
+Update-FileContent `
+    -Filename "./published/wwwroot/popup.html" `
+    -Value1 "js/main.js" `
+    -Value2 "js/popup.js"
 
-(Get-Content -Path ./published/wwwroot/options.html -Raw) -replace "js/main.js", "js/options.js" | Set-Content -Path ./published/wwwroot/options.html -Force
+Update-FileContent `
+    -Filename "./published/wwwroot/options.html" `
+    -Value1 "js/main.js" `
+    -Value2 "js/options.js"
