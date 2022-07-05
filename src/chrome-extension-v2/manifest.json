@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "version": "1.0",
-  "name": "Getting Started Example",
+  "name": "Getting Started Example (Chrome Original)",
   "description": "Build an Extension!",
 
   "permissions": [
