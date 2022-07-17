@@ -26,13 +26,3 @@ mv ./published/wwwroot/_framework ./published/wwwroot/framework
 
 cp ./published/wwwroot/index.html ./published/wwwroot/popup.html
 cp ./published/wwwroot/index.html ./published/wwwroot/options.html
-
-Update-FileContent `
-    -Filename "./published/wwwroot/popup.html" `
-    -Value1 "js/main.js" `
-    -Value2 "js/popup.js"
-
-Update-FileContent `
-    -Filename "./published/wwwroot/options.html" `
-    -Value1 "js/main.js" `
-    -Value2 "js/options.js"

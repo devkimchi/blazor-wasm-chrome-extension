@@ -1,7 +1,22 @@
 ﻿@page "/popup.html"
+@inject IJSRuntime JS
 
 <PageTitle>Pop Up</PageTitle>
 
 <h1>Pop Up - Chrome Extension with Blazor WASM</h1>
 
 <button id="changeColor"></button>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+        {
+            return;
+        }
+        
+        var src = "js/popup.js";
+        var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/main.js").ConfigureAwait(false);
+        await module.InvokeVoidAsync("loadJs", src).ConfigureAwait(false);
+    }
+}
