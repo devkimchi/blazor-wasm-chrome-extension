@@ -4,6 +4,12 @@
   "name": "Getting Started Example (Blazor WASM)",
   "description": "Build an Extension!",
 
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "browser-extension-sample@devkimchi.com"
+    }
+  },
+
   "permissions": [
     "*://developer.chrome.com/*",
     "*://developer.mozilla.org/*",
