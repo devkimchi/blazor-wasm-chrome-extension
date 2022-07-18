@@ -5,8 +5,10 @@
   "description": "Build an Extension!",
 
   "permissions": [
+    "*://developer.chrome.com/*",
+    "*://developer.mozilla.org/*",
+    "*://docs.microsoft.com/*",
     "activeTab",
-    "declarativeContent",
     "storage"
   ],
 
@@ -21,6 +23,7 @@
 
   "background": {
     "scripts": [
+      "js/dist/browser-polyfill.min.js",
       "js/background.js"
     ],
     "persistent": false

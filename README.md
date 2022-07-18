@@ -3,6 +3,11 @@
 This provides sample codes for a Chrome Extension app built on Blazor WASM.
 
 
+## Acknowledgement ##
+
+This sample code includes [Mozilla](https://mozilla.org/)'s [WebExtension `browser` API Polyfill](https://github.com/mozilla/webextension-polyfill), which is licensed under [MPL 2.0](https://github.com/mozilla/webextension-polyfill/blob/master/LICENSE).
+
+
 ## Getting Started ##
 
 1. Build the app
