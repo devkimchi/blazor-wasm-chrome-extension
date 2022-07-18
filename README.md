@@ -1,6 +1,6 @@
-# Blazor WASM Chrome Extension Sample #
+# Blazor WASM Browser Extension Sample #
 
-This provides sample codes for a Chrome Extension app built on Blazor WASM.
+This provides sample codes for a cross-browser extension app built on Blazor WASM. This sample app originally started for building a Chrome extension with Blazor WASM, but it now does the cross-browser support including Chromium-based browsers and Mozilla FireFox.
 
 
 ## Acknowledgement ##
@@ -28,6 +28,6 @@ This sample code includes [Mozilla](https://mozilla.org/)'s [WebExtension `brows
     ./Run-PostBuild.ps1
     ```
 
-1. Register the extension to your Chromium-based browser like Chrome or Edge
-1. Visit any website on https://developer.chrome.com or https://docs.microsoft.com
-1. Run the extension by clicking the icon at the top of your web browser
+1. Register the extension to your Chromium-based browser like [Chrome](https://www.google.com/chrome/) or [Edge](https://www.microsoft.com/edge?WT.mc_id=dotnet-70466-juyoo), or [Mozilla FireFox](https://www.mozilla.org/firefox/).
+1. Visit any website on [https://developer.chrome.com](https://developer.chrome.com/), [https://developer.mozilla.org](https://developer.mozilla.org/) or [https://docs.microsoft.com](https://docs.microsoft.com/?WT.mc_id=dotnet-70466-juyoo).
+1. Run the extension by clicking the icon at the top of your web browser.
