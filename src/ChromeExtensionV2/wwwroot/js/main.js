@@ -9,11 +9,11 @@ export function loadJs(sourceUrl) {
   tag.type = "text/javascript";
 
   tag.onload = function () {
-    console.log("Script loaded successfully");
+    console.log("Script loaded successfully - '" + sourceUrl + "'");
   }
 
   tag.onerror = function () {
-    console.error("Failed to load script");
+    console.error("Failed to load script - '" + sourceUrl + "'");
   }
 
   document.body.appendChild(tag);

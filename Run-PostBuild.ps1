@@ -27,4 +27,4 @@ mv ./published/wwwroot/_framework ./published/wwwroot/framework
 cp ./published/wwwroot/index.html ./published/wwwroot/popup.html
 cp ./published/wwwroot/index.html ./published/wwwroot/options.html
 
-Compress-Archive -Path ./published/wwwroot/* -DestinationPath ./published/wwwroot/wwwroot.zip
+Compress-Archive -Path ./published/wwwroot/* -DestinationPath ./published/wwwroot/wwwroot.zip -Force

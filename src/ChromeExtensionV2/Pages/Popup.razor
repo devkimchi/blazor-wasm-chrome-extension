@@ -1,5 +1,6 @@
 ﻿@page "/popup.html"
-@inject IJSRuntime JS
+@using ChromeExtensionV2.Components
+@inherits PageComponentBase
 
 <PageTitle>Pop Up</PageTitle>
 
@@ -15,8 +16,9 @@
             return;
         }
         
+        await base.OnAfterRenderAsync(firstRender).ConfigureAwait(false);
+
         var src = "js/popup.js";
-        var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/main.js").ConfigureAwait(false);
-        await module.InvokeVoidAsync("loadJs", src).ConfigureAwait(false);
+        await this.Module.InvokeVoidAsync("loadJs", src).ConfigureAwait(false);
     }
 }
