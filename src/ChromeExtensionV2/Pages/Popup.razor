@@ -9,15 +9,8 @@
 <button id="changeColor"></button>
 
 @code {
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected override async Task LoadAdditionalJsAsync()
     {
-        if (!firstRender)
-        {
-            return;
-        }
-        
-        await base.OnAfterRenderAsync(firstRender).ConfigureAwait(false);
-
         var src = "js/popup.js";
         await this.Module.InvokeVoidAsync("loadJs", src).ConfigureAwait(false);
     }
