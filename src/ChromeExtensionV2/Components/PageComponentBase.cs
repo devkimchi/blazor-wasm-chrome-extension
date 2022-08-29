@@ -24,11 +24,11 @@ namespace ChromeExtensionV2.Components
                 return;
             }
 
-            this.Module = await this.JS.InvokeAsync<IJSObjectReference>("import", "./js/main.js").ConfigureAwait(false);
+            this.Module = await this.JS.InvokeAsync<IJSObjectReference>("import", "./js/main.js");
 
             var src = "js/dist/browser-polyfill.min.js";
-            await this.Module.InvokeVoidAsync("loadJs", src).ConfigureAwait(false);
-            await this.LoadAdditionalJsAsync().ConfigureAwait(false);
+            await this.Module.InvokeVoidAsync("loadJs", src);
+            await this.LoadAdditionalJsAsync();
         }
 
         /// <summary>

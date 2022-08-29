@@ -1,4 +1,4 @@
-# Run-PostBuild.ps1
+# Build-Artifact.ps1
 Param(
     [string]
     [Parameter(Mandatory=$false)]
@@ -40,6 +40,9 @@ function Update-FileContent {
     $updated = $content -replace $Value1, $Value2
     Set-Content -Path $Filename -Value $updated -Force
 }
+
+dotnet build .
+dotnet publish ./src/ChromeExtensionV2 -c Release -o ./$PublishedPath
 
 Update-FileContent `
     -Filename "./$PublishedPath/wwwroot/_framework/blazor.webassembly.js" `
