@@ -17,5 +17,7 @@
     {
         var src = "js/options.js";
         await this.Module.InvokeVoidAsync("loadJs", src);
+        var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/main.js");
+        await module.InvokeVoidAsync("loadJs", src);
     }
 }
