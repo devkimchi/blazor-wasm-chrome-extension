@@ -10,7 +10,8 @@ function constructOptions(kButtonColors) {
     button.style.padding = '10px';
 
     button.addEventListener('click', function() {
-      chrome.storage.sync.set({color: item}, function() {
+      browser.storage.sync.set({color: item})
+      .then(() => {
         console.log('color is ' + item);
       })
     });

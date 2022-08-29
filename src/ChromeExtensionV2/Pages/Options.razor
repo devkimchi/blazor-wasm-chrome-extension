@@ -1,9 +1,10 @@
 ﻿@page "/options.html"
-@inject IJSRuntime JS
+@using ChromeExtensionV2.Components
+@inherits PageComponentBase
 
 <PageTitle>Options</PageTitle>
 
-<h1>Options - Chrome Extension with Blazor WASM</h1>
+<h1>Options - Browser Extension with Blazor WASM</h1>
 
 <div id="buttonDiv">
 </div>
@@ -12,15 +13,9 @@
 </div>
 
 @code {
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected override async Task LoadAdditionalJsAsync()
     {
-        if (!firstRender)
-        {
-            return;
-        }
-        
         var src = "js/options.js";
-        var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/main.js");
-        await module.InvokeVoidAsync("loadJs", src);
+        await this.Module.InvokeVoidAsync("loadJs", src);
     }
 }

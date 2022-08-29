@@ -4,9 +4,17 @@
   "name": "Getting Started Example (Blazor WASM)",
   "description": "Build an Extension!",
 
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "browser-extension-sample@devkimchi.com"
+    }
+  },
+
   "permissions": [
+    "*://developer.chrome.com/*",
+    "*://developer.mozilla.org/*",
+    "*://docs.microsoft.com/*",
     "activeTab",
-    "declarativeContent",
     "storage"
   ],
 
@@ -21,6 +29,7 @@
 
   "background": {
     "scripts": [
+      "js/dist/browser-polyfill.min.js",
       "js/background.js"
     ],
     "persistent": false
@@ -36,5 +45,10 @@
     }
   },
 
-  "options_page": "options.html"
+  "options_page": "options.html",
+
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": true
+  }
 }
